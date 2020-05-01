@@ -1,0 +1,22 @@
+{
+  "name": "oob_verify",
+  "version": "1.0.0",
+  "description": "A script to verify out-of-band configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'tests.js'"
+  },
+  "keywords": [
+    "oob",
+    "ping"
+  ],
+  "author": "Tristan Davis",
+  "license": "ISC",
+  "dependencies": {
+    "graceful-fs": "^4.2.4",
+    "mocha": "^7.1.2",
+    "ping": "^0.2.3",
+    "xlsx": "^0.16.0",
+    "yargs": "^15.3.1"
+  }
+}
