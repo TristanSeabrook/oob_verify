@@ -5,6 +5,6 @@ module.exports = {
   primeRegex:   /\d{6}/,
   altPrimeName: 'PRIME',
   mode:         'directory',
-  modePayload:  './spreadsheets',
+  modeParams:  './spreadsheets',
   ipList: [],
 }
