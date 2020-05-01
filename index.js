@@ -9,4 +9,5 @@ let ping =  require('ping');
 let yargs = require('yargs');
 
 //import modules
-let parseXLSX = require('./app/parse-xlsx')
+let parseXLSX = require('./app/parse-xlsx');
+let args =      require('./app/args')();
