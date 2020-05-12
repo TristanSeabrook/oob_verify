@@ -2,8 +2,9 @@
 
 module.exports = {
   ipListDir:    './spreadsheets/',
-  primeRegex:   /\d{6}/,
-  altPrimeName: 'PRIME',
+  primeRegex:   /[1-9]\d{5}/,
+  primeNum:    '',
+  altPrimeStr: 'PRIME',
   mode:         'directory',
   modeParams:  './spreadsheets',
   ipList: [],
