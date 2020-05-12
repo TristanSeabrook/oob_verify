@@ -14,7 +14,8 @@ module.exports = (rangeString) => {
     let longStartIP = parseInt(ip.toLong(startIP),  10);
     let longEndIP =  parseInt(ip.toLong(endIP),    10);
 
-  //given first and last address, generate an array of long notation ip addresses
+  //given first and last address, generate an array of long notation
+  //ip addresses
       let getLongArr = (nextIP, endIP, ipArr = []) => {
         let localIPArr = ipArr;
         if (nextIP < endIP) {
@@ -29,7 +30,8 @@ module.exports = (rangeString) => {
 
     let longArr = getLongArr(longStartIP, longEndIP);
 
-  //convert the array of long ip addresses to an array of dotted decimal addresses
+  //convert the array of long ip addresses to an array of dotted decimal
+  //ip addresses
     let dotDecArr =   longArr.map((ipAddr) => ip.fromLong(ipAddr));
 
     return dotDecArr;

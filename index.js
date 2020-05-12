@@ -4,8 +4,8 @@
 let config = require('./config');
 
 //import modules
-let parseXLSX = require('./app/parse-xlsx');
-let args =      require('./app/args')();
+let parseXLSX =   require('./app/parse-xlsx');
+let args =        require('./app/args')();
 let getPingList = require('./app/get_ping_list');
 
 //set the script mode and push parameters to the config object

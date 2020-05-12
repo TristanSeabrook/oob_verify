@@ -8,6 +8,6 @@ module.exports = (filenameString, config) => {
   }
 //if the filename doesn't contain 6 consecutive digits, return the default
   else {
-    return config.altPrimeName;
+    return config.altPrimeStr;
   }
 }

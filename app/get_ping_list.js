@@ -15,7 +15,8 @@ module.exports = (config) => {
       break;
 // if in range mode, expand the specified IP range into a list of IP addresses
     case 'range':
-      return 'range'
+      let getIpRange = require('./get_ip_range');
+      return getIpRange(config.modeParams);
       break;
     default:
       return 'Invalid parameter specified for config.mode';
