@@ -5,10 +5,15 @@ module.exports = (config) => {
 //directory and return an array of IP addresss
   if (config.mode === 'directory') {
     let dirPath =   config.modeParams;
+    
   }
 //if in file mode, parse the specified file and return an array of IP addresses
-  if (config.mode === 'file') {
+  if (config.mode === 'filename') {
+    let parseXlsx = require('./parse_xlsx');
     let fileName =  config.modeParams;
+    let hostsArr = parseXlsx(fileName);
+    let ipArr = hostsArr.map((host) => host.IP);
+    return ipArr;
 //if in range mode, parse the user input and return an array of IP addresses
   }
   if (config.mode === 'range') {

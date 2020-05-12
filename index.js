@@ -4,7 +4,7 @@
 let config = require('./config');
 
 //import modules
-let parseXLSX =   require('./app/parse-xlsx');
+let parseXLSX =   require('./app/parse_xlsx');
 let args =        require('./app/args')();
 let getPingList = require('./app/get_ping_list');
 

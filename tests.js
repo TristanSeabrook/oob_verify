@@ -10,7 +10,7 @@ let yargs =   require('yargs');
 let assert =  require('assert');
 
 //import modules
-let parseXLSX =     require('./app/parse-xlsx');
+let parseXlsx =     require('./app/parse_xlsx');
 let getPrimeNum =   require('./app/get_prime_num');
 let getIPArr =      require('./app/get_ip_arr');
 let parseIPRange =  require('./app/parse_ip_range');
@@ -18,7 +18,7 @@ let parseIPRange =  require('./app/parse_ip_range');
 let testDir = './tests/';
   let testDirLength = 58;
 let testFilename = '518792+IPs.xlsx';
-let testFile = `${testDir}/${testFilename}`;
+  let testFile = `${testDir}/${testFilename}`;
   let testFileLength = 28;
 let testRange = '100.100.129.202-100.100.129.232';
   let testRangeFirst =  testRange.split('-')[0];
@@ -26,10 +26,10 @@ let testRange = '100.100.129.202-100.100.129.232';
   let testRangeLength = 31;
 
 
-let sheetObject = parseXLSX(testFile);
+let sheetObject = parseXlsx(testFile);
 
 
-describe('parseXLSX', function() {
+describe('parseXlsx', function() {
   it('Should return an object', function() {
       assert.equal('object', (typeof sheetObject));
   });
@@ -63,7 +63,7 @@ describe('parseIPRange', function() {
 });
 
 describe('getIPArr', function() {
-  let dirObj =    {mode: 'directory', modeParams:  testDir};
+  let dirObj =    {mode: 'directory', modeParams: testDir};
   let fileObj =   {mode: 'filename',  modeParams: testFile};
   let rangeObj =  {mode: 'range',     modeParams: testRange};
 
@@ -75,7 +75,7 @@ describe('getIPArr', function() {
     assert.equal(testRangeLength, getIPArr(rangeObj).length)
   });
   it('Should return an array of the correct length in file mode', function() {
-    assert.equal(testFileLength, getIPArr(rangeObj).length)
+    assert.equal(testFileLength, getIPArr(fileObj).length)
   });
   it('Should return an array of the correct length in directory mode', function() {
     assert.equal(testDirLength, getIPArr(rangeObj).length)
