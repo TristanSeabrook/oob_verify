@@ -13,7 +13,12 @@ module.exports = () => {
   .option('filename', {
     alias:        'f',
     description:  'accept a filename as input',
-    type:         'string',
+    type:         'string'
+  })
+  .option('primeNum', {
+    alias:        'p',
+    description:  'allow the user to specify a PRIME number',
+    type:         'string'
   })
   .option('range', {
     alias:        'r',
