@@ -72,12 +72,12 @@ describe('getIPArr', function() {
   });
 
   it('Should return an array of the correct length in range mode', function() {
-    assert.equal(testLength, getIPArr(rangeObj).length)
+    assert.equal(testRangeLength, getIPArr(rangeObj).length)
   });
   it('Should return an array of the correct length in file mode', function() {
-    assert.equal(testLength, getIPArr(rangeObj).length)
+    assert.equal(testFileLength, getIPArr(rangeObj).length)
   });
   it('Should return an array of the correct length in directory mode', function() {
-    assert.equal(testLength, getIPArr(rangeObj).length)
+    assert.equal(testDirLength, getIPArr(rangeObj).length)
   });
 });

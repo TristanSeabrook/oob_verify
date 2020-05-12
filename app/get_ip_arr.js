@@ -1,7 +1,5 @@
 /*jshint esversion 8 */
 
-let ip = require('ip');
-
 module.exports = (config) => {
 //if in directory mode, parse all csv, xls, and xlsx files in the specified
 //directory and return an array of IP addresss
@@ -14,6 +12,8 @@ module.exports = (config) => {
 //if in range mode, parse the user input and return an array of IP addresses
   }
   if (config.mode === 'range') {
+    let parseIpRange = require('./parse_ip_range');
     let userRange = config.modeParams;
+    return parseIpRange(userRange);
   }
 }
