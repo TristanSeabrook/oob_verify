@@ -1,11 +1,12 @@
-/*jshint esversion 8 */
+/*jshint esversion: 8*/
 
 module.exports = (config) => {
 //if in directory mode, parse all csv, xls, and xlsx files in the specified
 //directory and return an array of IP addresss
   if (config.mode === 'directory') {
+    let parseDir = require('./parse_dir');
     let dirPath =   config.modeParams;
-    
+    return parseDir(config);
   }
 //if in file mode, parse the specified file and return an array of IP addresses
   if (config.mode === 'filename') {
@@ -21,4 +22,4 @@ module.exports = (config) => {
     let userRange = config.modeParams;
     return parseIpRange(userRange);
   }
-}
+};

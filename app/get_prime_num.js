@@ -1,4 +1,4 @@
-/*jshint esversion 8 */
+/*jshint esversion: 8*/
 
 //take a filename as a string and return the first 6 consecutive digits
 module.exports = (filenameString, config) => {
@@ -10,4 +10,4 @@ module.exports = (filenameString, config) => {
   else {
     return config.altPrimeStr;
   }
-}
+};

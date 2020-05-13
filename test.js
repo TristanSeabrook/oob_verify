@@ -1,8 +1,26 @@
-let parseXlsx = require('./app/parse_xlsx');
-let testFile = 'tests/518792+IPs.xlsx';
-let fileObj =  {mode: 'filename',     modeParams: testFile};
+let parseDir = require('./app/parse_dir');
+let fileObj =  {
+  mode: 'directory',
+  modeParams: './tests/',
+  extRegex: /\.xls$|\.xlsx$|\.csv$/gi,
+  primeRegex: /[1-9]\d{5}/,
+};
 
-let hostsArr = parseXlsx(fileObj.modeParams);
-let ipsOnly = hostsArr.map((host) => host.IP);
-
-console.log(ipsOnly.length);
+console.log(parseDir(fileObj, './tests'));
+// structure for dir mode
+// [
+//   {
+//     prime: 123456,
+//     ipArr: [
+//       192.168.1.100,
+//       192.168.1.101
+//     ]
+//   }
+//   {
+//     prime: 234567,
+//     ipArr: [
+//       192.168.1.102,
+//       192.168.1.103
+//     ]
+//   }
+// ]

@@ -1,4 +1,4 @@
-/*jshint esversion 8 */
+/*jshint esversion: 8*/
 
 let ip = require('ip');
 

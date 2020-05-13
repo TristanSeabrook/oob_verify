@@ -1,4 +1,4 @@
-/*jshint esversion: 8 */
+/*jshint esversion: 8*/
 
 //return the current date and time as a string in yyyy-mm-dd_hh-mm-ss form
 module.exports = (ext) => {

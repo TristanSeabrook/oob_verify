@@ -1,4 +1,4 @@
-/*jshint esversion 8 */
+/*jshint esversion: 8*/
 
 //import the xlsx parsing module
 let XLSX = require('xlsx');
@@ -11,7 +11,7 @@ module.exports = (filename) => {
     let firstWorksheet = workbook.Sheets[firstWorksheetName];
     return XLSX.utils.sheet_to_json(firstWorksheet);
   }
-  catch {
-    (error) => console.log(`Error: ${error}`);
+  catch(error) {
+    console.log(`Error: ${error}`);
   }
-}
+};
