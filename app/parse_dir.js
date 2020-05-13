@@ -12,12 +12,13 @@ let dirContents = fs.readdirSync(dirPath);
 let spreadsheets = dirContents.filter((filename) => filename.match(extRegex) !== null);
   //parse each file and return an object containging its PRIME number and an
   //array of IPs
-  let primeObj = (filename) => {
+  let getPrimeObj = (filename) => {
     return {
       primeNum: getPrimeNum(filename, config),
       ipArr: parseXlsx(`${dirPath}/${filename}`).map((host) => host.IP)
     };
   };
 
-return spreadsheets.map((spreadsheet) => primeObj(spreadsheet));
+//return an array containing objects with PRIME numbers and IP addresses
+return spreadsheets.map((spreadsheet) => getPrimeObj(spreadsheet));
 };
