@@ -27,4 +27,4 @@ module.exports = () => {
   })
   .argv;
   return args;
-}
+};

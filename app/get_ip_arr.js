@@ -5,21 +5,18 @@ module.exports = (config) => {
 //directory and return an array of IP addresss
   if (config.mode === 'directory') {
     let parseDir = require('./parse_dir');
-    let dirPath =   config.modeParams;
     return parseDir(config);
   }
 //if in file mode, parse the specified file and return an array of IP addresses
   if (config.mode === 'filename') {
     let parseXlsx = require('./parse_xlsx');
-    let fileName =  config.modeParams;
-    let hostsArr = parseXlsx(fileName);
+    let hostsArr = parseXlsx(config.modeParams);
     let ipArr = hostsArr.map((host) => host.IP);
     return ipArr;
 //if in range mode, parse the user input and return an array of IP addresses
   }
   if (config.mode === 'range') {
     let parseIpRange = require('./parse_ip_range');
-    let userRange = config.modeParams;
-    return parseIpRange(userRange);
+    return parseIpRange(config);
   }
 };

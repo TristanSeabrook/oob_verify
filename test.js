@@ -1,12 +1,12 @@
 let parseDir = require('./app/parse_dir');
 let fileObj =  {
   mode: 'directory',
-  modeParams: './tests/',
+  modeParams: './tests',
   extRegex: /\.xls$|\.xlsx$|\.csv$/gi,
   primeRegex: /[1-9]\d{5}/,
 };
 
-console.log(parseDir(fileObj, './tests'));
+console.log(parseDir(fileObj));
 // structure for dir mode
 // [
 //   {
