@@ -14,7 +14,7 @@ let parseDir =      require('./app/parse_dir');
 let parseIPRange =  require('./app/parse_ip_range');
 let parseXlsx =     require('./app/parse_xlsx');
 
-let testDir = './tests/';
+let testDir = './tests';
   let testDirLength = 2;
 let testFilename = '518792+IPs.xlsx';
   let testFile = `${testDir}/${testFilename}`;
@@ -32,14 +32,12 @@ let dirObj =    {
 };
 let fileObj =   {mode: 'filename',  modeParams: testFile};
 let rangeObj =  {mode: 'range',     modeParams: testRange};
-
-
-let sheetObject = parseXlsx(testFile);
+let sheetObj = parseXlsx(testFile);
 
 //Tests
 describe('parseXlsx', function() {
   it('Should return an object', function() {
-      assert.equal('object', (typeof sheetObject));
+      assert.equal('object', (typeof sheetObj));
   });
 });
 
@@ -57,16 +55,16 @@ describe('getPrimeNum', function() {
 
 describe('parseIPRange', function() {
   it('Should return an array', function() {
-    assert.equal(true, Array.isArray(parseIPRange(testRange)));
+    assert.equal(true, Array.isArray(parseIPRange(rangeObj)));
   });
   it('Should return the correct first value', function() {
-    assert.equal(testRangeFirst, parseIPRange(testRange)[0]);
+    assert.equal(testRangeFirst, parseIPRange(rangeObj)[0]);
   });
   it('Should return the correct last value', function() {
-    assert.equal(testRangeLast, parseIPRange(testRange)[testRangeLength - 1]);
+    assert.equal(testRangeLast, parseIPRange(rangeObj)[testRangeLength - 1]);
   });
   it('Should return an array of the correct length', function() {
-    assert.equal(testRangeLength, parseIPRange(testRange).length);
+    assert.equal(testRangeLength, parseIPRange(rangeObj).length);
   });
 });
 

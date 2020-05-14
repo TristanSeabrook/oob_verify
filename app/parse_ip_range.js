@@ -2,7 +2,8 @@
 
 let ip = require('ip');
 
-module.exports = (rangeString) => {
+module.exports = (config) => {
+    let rangeString = config.modeParams;
   //regex to parse octets in an IP string
     let oct = '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)';
     let ipRegex =     new RegExp(`${oct}.${oct}.${oct}.${oct}`, 'g');
@@ -35,4 +36,4 @@ module.exports = (rangeString) => {
     let dotDecArr =   longArr.map((ipAddr) => ip.fromLong(ipAddr));
 
     return dotDecArr;
-}
+};

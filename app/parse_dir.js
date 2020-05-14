@@ -4,15 +4,19 @@ let fs = require('graceful-fs');
 
 //parse all csv, xls, and xlsx files and return an array of PRIME objects
 module.exports = (config) => {
-//if dirPath is specified, use it, otherwise use the default path in config
 let dirPath = config.modeParams;
 let extRegex = config.extRegex;
 //create an array of all csv, xls, and xlsx files in a specified directory
 let dirContents = fs.readdirSync(dirPath);
+console.log(`dirContents: ${dirContents}`);
 let spreadsheets = dirContents.filter((filename) => filename.match(extRegex) !== null);
   //parse each file and return an object containging its PRIME number and an
   //array of IPs
   let getPrimeObj = (filename) => {
+<<<<<<< HEAD
+=======
+console.log(`typeof{dirPath}/{filename}: ${dirPath}/${filename}`);
+>>>>>>> 72356c57744f14941b61c1692d46807be736e43b
     return {
       primeNum: getPrimeNum(filename, config),
       ipArr: parseXlsx(`${dirPath}/${filename}`).map((host) => host.IP)
