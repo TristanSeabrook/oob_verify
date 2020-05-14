@@ -3,34 +3,44 @@ let config = require('./config');
 
 //import node module dependencies
 let fs =      require('graceful-fs');
-let ping =    require('ping');
 let yargs =   require('yargs');
 let assert =  require('assert');
 
 //import modules
+let datetime =      require('./app/datetime');
 let getIPArr =      require('./app/get_ip_arr');
-let getPrimeNum =   require('./app/get_prime_num');
+let getLogName =    require('./app/get_log_name');
+let getProjNum =    require('./app/get_proj_num');
 let parseDir =      require('./app/parse_dir');
 let parseIPRange =  require('./app/parse_ip_range');
 let parseXlsx =     require('./app/parse_xlsx');
+let ping =          require('./app/ping');
 
 let testDir = './tests';
-  let testDirLength = 2;
-let testFilename = '518792+IPs.xlsx';
+  let testDirLength = 1;
+let testFilename = '456789.xls';
   let testFile = `${testDir}/${testFilename}`;
-  let testFileLength = 28;
+  let testFileLength = 7;
 let testRange = '100.100.129.202-100.100.129.232';
   let testRangeFirst =  testRange.split('-')[0];
   let testRangeLast =   testRange.split('-')[1];
   let testRangeLength = 31;
 
+let logNameRegex = /\d{6}_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}.\w+$/g;
+let projNum = getProjNum(testFilename, {projRegex: /[1-9]\d{5}/});
+let getLogNameObj = {
+  projNum:  getProjNum(testFilename, {projRegex: /[1-9]\d{5}/}),
+  logExt:   '.log'
+};
+
 let dirObj =    {
   mode: 'directory',
   modeParams: testDir,
   extRegex: /\.xls$|\.xlsx$|\.csv$/gi,
-  primeRegex: /[1-9]\d{5}/,
+  projRegex: /[1-9]\d{5}/,
 };
 let fileObj =   {mode: 'filename',  modeParams: testFile};
+let projNumObj = {projRegex: /[1-9]\d{5}/, altProjStr: 'PRIME'};
 let rangeObj =  {mode: 'range',     modeParams: testRange};
 let sheetObj = parseXlsx(testFile);
 
@@ -41,15 +51,15 @@ describe('parseXlsx', function() {
   });
 });
 
-describe('getPrimeNum', function() {
+describe('getProjNum', function() {
   it('Should return a string', function(){
-    assert.equal('string', (typeof getPrimeNum(testFile, config)));
+    assert.equal('string', (typeof getProjNum(testFile, projNumObj)));
   });
   it('Should return the six digit number in a string', function() {
-    assert.equal('697420', getPrimeNum('PRIME_00697420+23.xlsx', config));
+    assert.equal('697420', getProjNum('PRIME_00697420+23.xlsx', projNumObj));
   });
   it('Should return "PRIME" if no match is made', function() {
-    assert.equal('PRIME', getPrimeNum('Filename without PRIME num', config));
+    assert.equal('PRIME', getProjNum('Filename without PRIME num', projNumObj));
   });
 });
 
@@ -87,5 +97,17 @@ describe('getIPArr', function() {
 describe('parseDir', function() {
   it('Should return an array containing objects', function() {
     assert.equal('object', typeof(parseDir(dirObj)[0]));
+  });
+});
+
+describe('getLogName', function() {
+  it('Should return a string in YYYY-MM-DD_HH_MM_SS.ext format', function() {
+    assert(getLogName(getLogNameObj).match(logNameRegex) != false);
+  });
+});
+
+describe('ping', function() {
+  it('Should return the correct string when pinging localhost', function(){
+    assert.equal('localhost is alive.', ping({hostArr: ['localhost']}));
   });
 });

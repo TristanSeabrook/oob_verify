@@ -15,9 +15,9 @@ module.exports = () => {
     description:  'accept a filename as input',
     type:         'string'
   })
-  .option('primeNum', {
+  .option('projNum', {
     alias:        'p',
-    description:  'allow the user to specify a PRIME number',
+    description:  'allow the user to specify a project number',
     type:         'string'
   })
   .option('range', {

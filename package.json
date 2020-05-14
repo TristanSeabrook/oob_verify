@@ -1,6 +1,6 @@
 {
   "name": "oob_verify",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A script to verify out-of-band configuration",
   "main": "index.js",
   "scripts": {
