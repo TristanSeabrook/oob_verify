@@ -1,5 +1,3 @@
-/*jshint esversion: 8*/
-
 module.exports = (config) => {
 //if in directory mode, parse all csv, xls, and xlsx files in the specified
 //directory and return an array of IP addresss

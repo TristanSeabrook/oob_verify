@@ -1,5 +1,3 @@
-/*jshint esversion: 8*/
-
 //take a filename as a string and return the first 6 consecutive digits
 module.exports = (filenameStr, config) => {
   let regex = config.projRegex;

@@ -1,5 +1,3 @@
-/*jshint esversion: 8*/
-
 let yargs = require('yargs');
 
 //parse any shell arguments passed to node
