@@ -1,4 +1,4 @@
-//return the current date and time as a string in yyyy-mm-dd_hh-mm-ss form
+//return the current date and time as a string in yyyy mm dd hh mm ss format
 module.exports = (separators = '-_-') => {
   //parse the separator parameter string
   let y =  separators.slice(0,1);

@@ -1,5 +1,5 @@
 
-//format the output of hte ping command
+//format the output of the ping command
 let formatPingOutput = (output) => {
   let formattedOutput = output
     .replace(/^\s*\n/gm, '')

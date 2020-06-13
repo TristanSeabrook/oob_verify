@@ -1,10 +1,10 @@
-let fs = require('fs');
+let fs = require('graceful-fs');
 
 let getLogLocation = require('./get_log_location');
 
 module.exports = (logContent, config) => {
   let logLocation = getLogLocation(config);
-  fs.appendFile(logLocation, logContent, (error) => {
+  fs.appendFileSync(logLocation, logContent, (error) => {
     if (error) {console.log(`Log Error: ${error}`);}
   });
 };
