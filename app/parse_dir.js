@@ -1,6 +1,6 @@
-let getProjNum = require('./get_proj_num');
-let parseXlsx = require('./parse_xlsx');
-let fs = require('graceful-fs');
+let getProjNum =  require('./get_proj_num');
+let parseXlsx =   require('./parse_xlsx');
+let fs =          require('graceful-fs');
 
 //parse all csv, xls, and xlsx files and return an array of project objects
 module.exports = (config) => {
