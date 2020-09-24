@@ -16,7 +16,7 @@ let parseIPRange =  require('./app/parse_ip_range');
 let parseXlsx =     require('./app/parse_xlsx');
 let ping =          require('./app/ping');
 
-let testDir = './tests';
+let testDir = './test';
   let testDirLength = 1;
 let testFilename = '456789.xls';
   let testFile = `${testDir}/${testFilename}`;
@@ -112,11 +112,5 @@ describe('parseDir', function() {
 describe('getLogName', function() {
   it('Should return a string in YYYY-MM-DD_HH_MM_SS.ext format', function() {
     assert(getLogName(getLogNameObj).match(logNameRegex) != false);
-  });
-});
-
-describe('ping', function() {
-  it('Should return the correct string when pinging localhost', function(){
-    assert.equal('localhost is alive.', ping({hostArr: ['localhost']}));
   });
 });

@@ -1,5 +1,3 @@
-/*jshint esversion: 8*/
-
 //import the xlsx parsing module
 let XLSX = require('xlsx');
 
