@@ -1,5 +1,5 @@
-let assert =  require('assert');
-let getIPArr = require('../app/get_ip_arr');
+let assert =    require('assert');
+let getIPArr =  require('../app/get_ip_arr');
 
 let testDir = './test/files';
 
