@@ -1,14 +1,20 @@
 module.exports = {
   dirPath:      './spreadsheets',
-  extRegex:     /\.xls$|\.xlsx$|\.csv$/gi,
-  projRegex:   /[1-9]\d{5}/,
   projNum:     '',
   altProjStr:  'PRIME',
-  logPath:      './logs',
-  logName:      '',
-  logExt:       'log',
-  saveAs:       '',
   mode:         'directory',
   modeParams:   './spreadsheets',
   hostArr:       [],
+  log: {
+    path:      './logs',
+    name:      '',
+    ext:       'log'
+  },
+  regex: {
+    ext:      /\.xls$|\.xlsx$|\.csv$/gi,
+    proj:     /[1-9]\d{5}/,
+    ip:       /ip/i,
+    subnet:   /sub|mask/i,
+    gateway:  /gate|gw/i
+  }
 };

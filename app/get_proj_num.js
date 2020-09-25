@@ -1,6 +1,6 @@
 //take a filename as a string and return the first 6 consecutive digits
 module.exports = (filenameStr, config) => {
-  let regex = config.projRegex;
+  let regex = config.regex.proj;
   if (filenameStr.match(regex)) {
     return filenameStr.match(regex)[0];
   }

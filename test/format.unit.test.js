@@ -15,15 +15,15 @@ let deadHost = {
 
 describe('format', function() {
   it('Should return a string', function() {
-    assert.equal('string', typeof format.pingResult(liveHost));
-    assert.equal('string', typeof format.pingResult(deadHost));
+    assert.strictEqual('string', typeof format.pingResult(liveHost));
+    assert.strictEqual('string', typeof format.pingResult(deadHost));
   });
 
   it('Should return a string containing \'is alive\' for a live host', function() {
-    assert.equal('is alive', format.pingResult(liveHost).match('is alive')[0]);
+    assert.strictEqual('is alive', format.pingResult(liveHost).match('is alive')[0]);
   });
 
   it('Should return a string containing \'is not alive\' for a dead host', function() {
-    assert.equal('is not alive', format.pingResult(deadHost).match('is not alive')[0]);
+    assert.strictEqual('is not alive', format.pingResult(deadHost).match('is not alive')[0]);
   });
 });

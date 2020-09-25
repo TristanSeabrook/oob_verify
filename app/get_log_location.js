@@ -1,6 +1,6 @@
 module.exports = (config) => {
-  let logPath = config.logPath;
-  let logName = config.logName;
-  let logExt =  config.logExt;
+  let logPath = config.log.path;
+  let logName = config.log.name;
+  let logExt =  config.log.ext;
   return `${logPath}/${logName}.${logExt}`;
 };

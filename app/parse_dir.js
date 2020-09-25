@@ -5,7 +5,7 @@ let fs =          require('graceful-fs');
 //parse all csv, xls, and xlsx files and return an array of project objects
 module.exports = (config) => {
 let dirPath = config.modeParams;
-let extRegex = config.extRegex;
+let extRegex = config.regex.ext;
 //create an array of all csv, xls, and xlsx files in a specified directory
 let dirContents = fs.readdirSync(dirPath);
 let spreadsheets = dirContents.filter((filename) => filename.match(extRegex) !== null);

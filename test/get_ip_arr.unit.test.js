@@ -12,12 +12,14 @@ let testFilename = '456789.xls';
   let testFile = `${testDir}/${testFilename}`;
   let testFileLength = 7;
 
-let testDirLength = 1;
+let testDirLength = 2;
 let dirObj =    {
   mode: 'directory',
   modeParams: testDir,
-  extRegex: /\.xls$|\.xlsx$|\.csv$/gi,
-  projRegex: /[1-9]\d{5}/,
+  regex: {
+    ext: /\.xls$|\.xlsx$|\.csv$/gi,
+    proj: /[1-9]\d{5}/
+  }
 };
 
 let rangeObj =  {mode: 'range',     modeParams: testRange};
@@ -28,15 +30,15 @@ console.log(testFileLength, getIPArr(fileObj).length);
 
 describe('getIPArr', function() {
   it('Should return an array', function () {
-    assert.equal(true, Array.isArray(getIPArr(rangeObj)));
+    assert.strictEqual(true, Array.isArray(getIPArr(rangeObj)));
   });
   it('Should return an array of the correct length in range mode', function() {
-    assert.equal(testRangeLength, getIPArr(rangeObj).length);
+    assert.strictEqual(testRangeLength, getIPArr(rangeObj).length);
   });
   it('Should return an array of the correct length in file mode', function() {
-    assert.equal(testFileLength, getIPArr(fileObj).length);
+    assert.strictEqual(testFileLength, getIPArr(fileObj).length);
   });
   it('Should return an array of the correct length in directory mode', function() {
-    assert.equal(testDirLength, getIPArr(dirObj).length);
+    assert.strictEqual(testDirLength, getIPArr(dirObj).length);
   });
 });
