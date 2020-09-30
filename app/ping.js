@@ -8,7 +8,7 @@ let writeLog =        require('./write_log');
 
 module.exports = async (config) => {
 //set the current datetime in the config object
-  config.logName = datetime();
+  config.log.name = datetime();
 //get the log filename
   let logLocation = getLogLocation(config);
 //get the array of hostnames or IP addresses from the config object
@@ -18,7 +18,7 @@ module.exports = async (config) => {
   let promiseArr = hostArr.map(
     (host) => {
       return ping.promise.probe(host)
-        .then((pingResult) => pingResult );
+        .then((pingResult) => pingResult);
     }
   );
 //resolve all ping promises, log the results, and display a summary to the user
