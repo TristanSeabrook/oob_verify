@@ -5,7 +5,11 @@ let hostArr = getIpRange({modeParams:'192.168.1.1-254'});
 
 config.hostArr = hostArr;
 
-ping(config);
+let test = new RegExp('test');
+
+console.log(test.test('test'));
+
+// ping(config);
 
 
 

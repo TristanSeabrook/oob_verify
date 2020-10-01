@@ -1,15 +1,9 @@
-//import the xlsx parsing module
-let XLSX = require('xlsx');
+let keys = require('../app/key_check');
+//given a spreadsheet's contents, return an object with standardized keys
+module.exports = (config, xlsxContentsObjsArr) => {
 
-//given a spreadsheet's filename, return an object of its first sheet's contents
-module.exports = (filePath) => {
-  try {
-    let workbook = XLSX.readFile(filePath);
-    let firstWorksheetName = workbook.SheetNames[0];
-    let firstWorksheet = workbook.Sheets[firstWorksheetName];
-    return XLSX.utils.sheet_to_json(firstWorksheet);
+  if (!keys.firstObjHas(config, xlsxContentsObjsArr)) {
+    return 'Error: unable to find expected column headings in source spreadsheet.';
   }
-  catch(error) {
-    console.log(`Error: ${error}`);
-  }
+
 };

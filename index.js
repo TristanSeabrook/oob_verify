@@ -4,7 +4,6 @@ let config = require('./config');
 //import modules
 let args =        require('./app/args')();
 let getProjNum =  require('./app/get_proj_num');
-let parseXLSX =   require('./app/parse_xlsx');
 
 //set the script mode and push any parameters to the config object
 ((args) => {

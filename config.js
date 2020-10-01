@@ -13,8 +13,11 @@ module.exports = {
   regex: {
     ext:      /\.xls$|\.xlsx$|\.csv$/gi,
     proj:     /[1-9]\d{5}/,
-    ip:       /ip/i,
-    subnet:   /sub|mask/i,
-    gateway:  /gate|gw/i
-  }
+  },
+  expectedColumns: [
+    {name:  'hostname', regex:  /host/i},
+    {name:  'ip',       regex:  /ip/i},
+    {name:  'netmask',  regex:  /sub|mask/i},
+    {name:  'gateway',  regex:  /gate|gw/i}
+  ]
 };
