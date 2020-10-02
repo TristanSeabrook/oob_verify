@@ -1,15 +1,35 @@
-let ping = require('./app/ping');
-let config = require('./config');
-let getIpRange = require('./app/parse_ip_range');
-let hostArr = getIpRange({modeParams:'192.168.1.1-254'});
+let assert = require('assert');
 
-config.hostArr = hostArr;
+let returnRegexMatchInArr = ();
 
-let test = new RegExp('test');
+let config.expectedColumns = [
+    {name:  'hostname', regex:  /host/i,},
+    {name:  'ip',       regex:  /ip/i,},
+    {name:  'netmask',  regex:  /sub|mask/i,},
+    {name:  'gateway',  regex:  /gate|gw/i}
+  ];
 
-console.log(test.test('test'));
+let columnNames = [ 'Hostname', 'IP Address', 'Subnet Mask', 'Gateway' ];
+
+let getNetmaskMatch = config.expectedColumns.netmask.getRegexMatchFromArrIfFound(columnNames);
+
+describe('returnRegexMatchIfFound', function() {
+  it('Returns "netmask" when fed array containing "Subnet Mask".', function() {
+    assert.strictEqual('netmask', getNetmaskMatch(columnNames));
+  });
+});
+
+
+
+// config.hostArr = hostArr;
+//
+// let test = new RegExp('test');
+//
+// console.log(test.test('test'));
 
 // ping(config);
+
+
 
 
 
