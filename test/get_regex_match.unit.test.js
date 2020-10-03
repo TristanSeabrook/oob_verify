@@ -20,7 +20,7 @@ let expectedColumns = [...config.expectedColumns].map(
 let getNetmaskMatch = config.expectedColumns.netmask.getRegexMatchInArr(columnNamesArr);
 
 describe('returnRegexMatchIfFound', function() {
-  it('Returns "netmask" when fed array containing "Subnet Mask".', function() {
+  it('Returns "netmask" when fed array containing the string "Subnet Mask".', function() {
     assert.strictEqual('netmask', getNetmaskMatch(columnNames));
   });
 });
