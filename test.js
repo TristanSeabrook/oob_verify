@@ -1,23 +1,42 @@
-let assert = require('assert');
+const mod = {
+  x: 42,
+  getX: function() {
+    x: 55,
+    return this.x;
+  }
+};
 
-let returnRegexMatchInArr = ();
+const unboundGetX = mod.getX.bind(mod.getX);
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
+// const boundGetX = unboundGetX.bind(mod);
+// console.log(boundGetX());
+// expected output: 42
 
-let config.expectedColumns = [
-    {name:  'hostname', regex:  /host/i,},
-    {name:  'ip',       regex:  /ip/i,},
-    {name:  'netmask',  regex:  /sub|mask/i,},
-    {name:  'gateway',  regex:  /gate|gw/i}
-  ];
 
-let columnNames = [ 'Hostname', 'IP Address', 'Subnet Mask', 'Gateway' ];
 
-let getNetmaskMatch = config.expectedColumns.netmask.getRegexMatchFromArrIfFound(columnNames);
 
-describe('returnRegexMatchIfFound', function() {
-  it('Returns "netmask" when fed array containing "Subnet Mask".', function() {
-    assert.strictEqual('netmask', getNetmaskMatch(columnNames));
-  });
-});
+
+// let assert = require('assert');
+//
+// let returnRegexMatchInArr = ();
+//
+// let config.expectedColumns = [
+//     {name:  'hostname', regex:  /host/i,},
+//     {name:  'ip',       regex:  /ip/i,},
+//     {name:  'netmask',  regex:  /sub|mask/i,},
+//     {name:  'gateway',  regex:  /gate|gw/i}
+//   ];
+//
+// let columnNames = [ 'Hostname', 'IP Address', 'Subnet Mask', 'Gateway' ];
+//
+// let getNetmaskMatch = config.expectedColumns.netmask.getRegexMatchFromArrIfFound(columnNames);
+//
+// describe('returnRegexMatchIfFound', function() {
+//   it('Returns "netmask" when fed array containing "Subnet Mask".', function() {
+//     assert.strictEqual('netmask', getNetmaskMatch(columnNames));
+//   });
+// });
 
 
 

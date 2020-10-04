@@ -12,7 +12,7 @@ module.exports = async (config) => {
 //get the log filename
   let logLocation = getLogLocation(config);
 //get the array of hostnames or IP addresses from the config object
-  let hostArr = config.hostArr;
+  let hostArr = config.hostObjsArr;
   let totalHosts = hostArr.length;
 //use map to produce a new array of ping promises
   let promiseArr = hostArr.map(

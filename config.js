@@ -4,7 +4,7 @@ module.exports = {
   altProjStr:  'PRIME',
   mode:         'directory',
   modeParams:   './spreadsheets',
-  hostArr:       [],
+  hostObjsArr:       [],
   log: {
     path:      './logs',
     name:      '',

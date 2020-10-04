@@ -18,15 +18,6 @@ let config = {
   ]
 };
 
-let strictConfig = {
-  expectedColumns: [
-    {name:  'hostname', regex:  /hostname/},
-    {name:  'ip',       regex:  /ip/},
-    {name:  'netmask',  regex:  /netmask/},
-    {name:  'gateway',  regex:  /gateway/}
-  ]
-};
-
 let xlsxContentsObjsArr = [
   { Host: 'router', IP: '192.168.1.1', Mask: '255.255.255.0', GW: '192.168.1.1', FQDN: 'router.test.net' },
   { Host: 'server_01', IP: '192.168.1.100', FQDN: 0 },
