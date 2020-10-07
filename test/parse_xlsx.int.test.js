@@ -43,13 +43,13 @@ let parsedXlsx = parseXlsx(config, xlsxContentsObjsArr);
 let parsedBadXlsx = parseXlsx(config, badXlsxContentsObjsArr);
 
 describe('parseXlsx', function() {
-  it('Each object should have the expected keys', function() {
+  it('Each object should have the expected keys.', function() {
     assert.strictEqual(true, keys.allObjsHave(config, parsedXlsx, true));
   });
-  it('The value of the "ip" key should be in IPv4 format', function() {
+  it('The value of the "ip" key should be in IPv4 format.', function() {
     assert.strictEqual(true, allIpsAreValid(parsedXlsx));
   });
-  it('Should return an error if unable to parse the XLSX object', function() {
+  it('Should return an error if unable to parse the XLSX object.', function() {
     assert.strictEqual(errorStr, parsedBadXlsx);
   });
 });
