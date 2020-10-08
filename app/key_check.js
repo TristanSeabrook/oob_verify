@@ -3,7 +3,7 @@ let truthReducer = (acc, curr) => acc && curr;
 let createRegex = (input) => {
   let isRegex = input.constructor.name === "RegExp";
   return isRegex ? input : new RegExp(input);
-}
+};
 
 let getExpectedKeyRegexes = (config, strict = false) => {
   let valueType = strict ? 'name' : 'regex';

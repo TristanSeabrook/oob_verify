@@ -32,7 +32,7 @@ describe('keys.objHas', function() {
   });
   it('Should return false in strict mode if keys do not match exactly.', function() {
     assert.strictEqual(false, keys.objHas(config, objWithAllKeys, true));
-  })
+  });
 });
 
 describe('keys.firstObjHas', function() {

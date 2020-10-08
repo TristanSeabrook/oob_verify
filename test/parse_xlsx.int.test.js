@@ -42,6 +42,13 @@ let errorStr = 'Error: unable to find expected column headings in source spreads
 let parsedXlsx = parseXlsx(config, xlsxContentsObjsArr);
 let parsedBadXlsx = parseXlsx(config, badXlsxContentsObjsArr);
 
+let allIpsAreValid = (parsedXlsx) => {
+  let validIpTruthArr = parsedXlsx.map((hostObj) => {
+    return ip.isV4Format(hostObj.ip);
+  });
+  return validIpTruthArr.reduce(truthReducer);
+};
+
 describe('parseXlsx', function() {
   it('Each object should have the expected keys.', function() {
     assert.strictEqual(true, keys.allObjsHave(config, parsedXlsx, true));
