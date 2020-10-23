@@ -1,5 +1,7 @@
+//import requried app modules
 let getRegexMatchInArr =  require('../app/get_regex_match');
 let keys =                require('../app/key_check');
+
 //given a spreadsheet's contents, return an object with standardized keys
 module.exports = (config, xlsxContentsObjsArr) => {
 //get an array of the source column names from the keys in the first object in
@@ -27,10 +29,9 @@ module.exports = (config, xlsxContentsObjsArr) => {
     });
     return standardizedObj;
   });
-
+//if the source file does not have all expected columns, return an error
   if (!keys.firstObjHas(config, xlsxContentsObjsArr, false)) {
     return 'Error: unable to find expected column headings in source spreadsheet.';
   }
-
   return standardizedHostsObjsArr;
 };

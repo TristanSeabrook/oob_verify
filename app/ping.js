@@ -11,13 +11,13 @@ module.exports = async (config) => {
   config.log.name = datetime();
 //get the log filename
   let logLocation = getLogLocation(config);
-//get the array of hostnames or IP addresses from the config object
-  let hostArr = config.hostObjsArr;
-  let totalHosts = hostArr.length;
+//get the array of host objects from the config object
+  let hostObjsArr = config.hostObjsArr;
+  let totalHosts = hostObjsArr.length;
 //use map to produce a new array of ping promises
-  let promiseArr = hostArr.map(
+  let promiseArr = hostObjsArr.map(
     (host) => {
-      return ping.promise.probe(host)
+      return ping.promise.probe(host.ip)
         .then((pingResult) => pingResult);
     }
   );

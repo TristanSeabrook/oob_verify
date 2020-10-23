@@ -1,19 +1,28 @@
-const mod = {
-  x: 42,
-  getX: function() {
-    x: 55,
-    return this.x;
-  }
+let ping = require('app/ping');
+
+let config = {
+  dirPath:      './spreadsheets',
+  projNum:     '',
+  altProjStr:  'PRIME',
+  mode:         'directory',
+  modeParams:   './spreadsheets',
+  hostObjsArr:       [],
+  log: {
+    path:      './logs',
+    name:      '',
+    ext:       'log'
+  },
+  regex: {
+    ext:      /\.xls$|\.xlsx$|\.csv$/gi,
+    proj:     /[1-9]\d{5}/,
+  },
+  expectedColumns: [
+    {name:  'hostname', regex:  /host/i},
+    {name:  'ip',       regex:  /ip/i},
+    {name:  'netmask',  regex:  /sub|mask/i},
+    {name:  'gateway',  regex:  /gate|gw/i}
+  ]
 };
-
-const unboundGetX = mod.getX.bind(mod.getX);
-console.log(unboundGetX()); // The function gets invoked at the global scope
-// expected output: undefined
-// const boundGetX = unboundGetX.bind(mod);
-// console.log(boundGetX());
-// expected output: 42
-
-
 
 
 
