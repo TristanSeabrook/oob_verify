@@ -1,6 +1,6 @@
 module.exports = {
   dirPath:      './spreadsheets',
-  projNum:     '',
+  projNum:     false,
   altProjStr:  'PRIME',
   mode:         'directory',
   modeParams:   './spreadsheets',

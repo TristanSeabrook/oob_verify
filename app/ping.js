@@ -4,11 +4,12 @@ let stringify =       require('json-stringify-pretty-compact');
 //import requried app modules
 let datetime =        require('./datetime');
 let getLogLocation =  require('./get_log_location');
+let getLogName =      require('./get_log_name');
 let writeLog =        require('./write_log');
 
 module.exports = async (config) => {
 //set the current datetime in the config object
-  config.log.name = datetime();
+  config.log.name = getLogName(config);
 //get the log filename
   let logLocation = getLogLocation(config);
 //get the array of host objects from the config object
