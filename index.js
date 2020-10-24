@@ -7,10 +7,6 @@ let args = require('./app/args')();
 //set the script mode, push any parameters to the config object, and call the
 //appropriate function(s)
 ((args) => {
-  if (args.d) {
-    config.mode =       'directory';
-    config.modeParams = args.d;
-  }
   if (args.p) {
     config.projNum = args.p;
   }
@@ -31,5 +27,10 @@ let args = require('./app/args')();
     let hostsIpArr = parseIpRange(config);
     config.hostObjsArr = hostsIpArr.map(ipAddr => ({ip: ipAddr}));
     ping(config);
+  }
+  if (args.d || config.mode === 'directory') {
+    let pingAllHostsInDir = require('./ping_all_hosts_in_dir');
+    config.mode =       'directory';
+    config.modeParams = (args.d) ? args.d : config.modeParams;
   }
 })(args);

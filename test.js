@@ -1,4 +1,4 @@
-let ping = require('app/ping');
+let pingAllHostsInDir = require('./app/ping_all_hosts_in_dir');
 
 let config = {
   dirPath:      './spreadsheets',
@@ -23,6 +23,8 @@ let config = {
     {name:  'gateway',  regex:  /gate|gw/i}
   ]
 };
+
+pingAllHostsInDir(config);
 
 
 

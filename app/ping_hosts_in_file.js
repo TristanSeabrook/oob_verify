@@ -3,8 +3,8 @@ module.exports = (config) => {
   let parseXlsx =       require('../app/parse_xlsx');
   let ping =            require('../app/ping');
 
-  let filename = config.modeParams;
-  let xlsxContents = getXlsxContents(filename);
+  let filePath = config.modeParams;
+  let xlsxContents = getXlsxContents(filePath);
   let standardizedHostsObjsArr = parseXlsx(config, xlsxContents);
 
   config.hostObjsArr = standardizedHostsObjsArr;
