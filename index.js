@@ -29,8 +29,9 @@ let args = require('./app/args')();
     ping(config);
   }
   if (args.d || config.mode === 'directory') {
-    let pingAllHostsInDir = require('./ping_all_hosts_in_dir');
+    let pingAllHostsInDir = require('./app/ping_all_hosts_in_dir');
     config.mode =       'directory';
     config.modeParams = (args.d) ? args.d : config.modeParams;
+    pingAllHostsInDir(config);
   }
 })(args);

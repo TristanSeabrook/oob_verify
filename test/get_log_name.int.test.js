@@ -27,9 +27,9 @@ let testConfigWithoutProjNum = {
 
 describe('getLogName', function() {
   it('Should return the correct log name', function() {
-    assert.strictEqual(`123456_${getDateTime()}.log`, getLogName(testConfigWithProjNum));
+    assert.strictEqual(`123456_${getDateTime()}`, getLogName(testConfigWithProjNum));
   });
   it('Should include a default string if config contains no project number', function() {
-    assert.strictEqual(`PROJECT_${getDateTime()}.log`, getLogName(testConfigWithoutProjNum));
+    assert.strictEqual(`PROJECT_${getDateTime()}`, getLogName(testConfigWithoutProjNum));
   });
 });
