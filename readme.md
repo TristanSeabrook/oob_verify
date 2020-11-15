@@ -1,5 +1,5 @@
 # Out-of-Band Verification Script
-#### A tool for simultaneously interacting with a range or list of hosts
+### A tool for simultaneously interacting with a range or list of hosts
 
 This tool parses command line arguments or spreadsheet files to build a list of IP address or hostnames and simultaneously executes ping or SSH requests against multiple hosts.
 Currently the tool functions as a command line utility, but it will ultimately serve as the back end of a web app.
