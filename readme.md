@@ -1,5 +1,5 @@
 # Out-of-Band Verification Script
-###### A tool for simultaneously interacting with a range or list of hosts
+#### A tool for simultaneously interacting with a range or list of hosts
 
 This tool parses command line arguments or spreadsheet files to build a list of IP address or hostnames and simultaneously executes ping or SSH requests against multiple hosts.
 Currently the tool functions as a command line utility, but it will ultimately serve as the back end of a web app.
@@ -21,7 +21,7 @@ The tool currently takes four optional arguments:
         Specify a project number. In range mode, this number will form the first part of the log filename. In file mode, any argument provided will override the parsed filename provided.
 
     -r
-        Ping a range of IP addresses. The script can parse ranges in xxx.xxx.xxx.xxx-xxx.xxx.xxx.yyy or xxx.xxx.xxx.xxx-yyy format.
+        Ping a range of IP addresses. The script can parse ranges in XXX.XXX.XXX.XXX-XXX.XXX.XXX.YYY or XXX.XXX.XXX.XXX-YYY  format.
 ```
 
 If no arguments are specified, the script will parse all spreadsheets in the default directory and ping all hosts listed in them.
