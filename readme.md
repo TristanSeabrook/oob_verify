@@ -4,6 +4,13 @@
 This tool parses command line arguments or spreadsheet files to build a list of IP address or hostnames and simultaneously executes ping or SSH requests against multiple hosts.
 Currently the tool functions as a command line utility, but it will ultimately serve as the back end of a web app.
 
+## Installation
+The node_modules directory is not tracked by Git. Make sure to install all dependencies after cloning this repo.
+```
+git clone [URL]/oob_verify/
+cd oob_verify
+npm install
+```
 ## Overview
 
 You can run the script using Node.js from within the root directory: `node index.js`
