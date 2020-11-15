@@ -22,7 +22,6 @@ let objsWithoutAllKeysArr = [
   {hostname: '123', ip: '123', netmask: '123', gateway: '123'}
 ];
 
-console.log(keys.objHas(config, objWithAllKeys, true));
 describe('keys.objHas', function() {
   it('Should return true if an object has all expected keys.', function() {
     assert.strictEqual(true, keys.objHas(config, objWithAllKeys));

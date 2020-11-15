@@ -5,7 +5,7 @@ This tool parses command line arguments or spreadsheet files to build a list of 
 Currently the tool functions as a command line utility, but it will ultimately serve as the back end of a web app.
 
 ## Installation
-The node_modules directory is not tracked by Git. Make sure to install all dependencies after cloning this repo.
+The _node_modules_ directory is not tracked by Git. Make sure to install all dependencies after cloning this repo.
 ```
 git clone [URL]/oob_verify/
 cd oob_verify
@@ -17,19 +17,18 @@ You can run the script using Node.js from within the root directory: `node index
 
 
 The tool currently takes four optional arguments:
-```
-    -d
-        Run the script in directory mode and optionally specify the directory where the script will search for spreadsheets files containing IP addresses. If no directory path is provided, the script will fall back to the default provided in the config file.
 
-    -f
-        Run the script in file mode and parse the specified file. If no filename is provided, the script will default to directory mode.
+  -d
+      Run the script in directory mode and optionally specify the directory where the script will search for spreadsheets files containing IP addresses. If no directory path is provided, the script will fall back to the default provided in the config file.
 
-    -p
-        Specify a project number. In range mode, this number will form the first part of the log filename. In file mode, any argument provided will override the parsed filename provided.
+  -f
+      Run the script in file mode and parse the specified file. If no filename is provided, the script will default to directory mode.
 
-    -r
-        Ping a range of IP addresses. The script can parse ranges in XXX.XXX.XXX.XXX-XXX.XXX.XXX.YYY or XXX.XXX.XXX.XXX-YYY  format.
-```
+  -p
+      Specify a project number. In range mode, this number will form the first part of the log filename. In file mode, any argument provided will override the parsed filename provided.
+
+  -r
+      Ping a range of IP addresses. The script can parse ranges in XXX.XXX.XXX.XXX-XXX.XXX.XXX.YYY or XXX.XXX.XXX.XXX-YYY  format.
 
 If no arguments are specified, the script will parse all spreadsheets in the default directory and ping all hosts listed in them.
 
