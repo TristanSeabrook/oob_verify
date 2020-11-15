@@ -9,7 +9,7 @@ The node_modules directory is not tracked by Git. Make sure to install all depen
 ```
 git clone [URL]/oob_verify/
 cd oob_verify
-npm install
+npm install --save
 ```
 ## Overview
 
