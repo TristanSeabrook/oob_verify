@@ -18,6 +18,7 @@ You can run the script using Node.js from within the root directory: `node index
 
 The tool currently takes four optional arguments:
 
+```
   -d
       Run the script in directory mode and optionally specify the directory where the script will search for spreadsheets files containing IP addresses. If no directory path is provided, the script will fall back to the default provided in the config file.
 
@@ -29,6 +30,7 @@ The tool currently takes four optional arguments:
 
   -r
       Ping a range of IP addresses. The script can parse ranges in XXX.XXX.XXX.XXX-XXX.XXX.XXX.YYY or XXX.XXX.XXX.XXX-YYY  format.
+```
 
 If no arguments are specified, the script will parse all spreadsheets in the default directory and ping all hosts listed in them.
 
