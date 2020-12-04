@@ -1,5 +1,5 @@
 let assert =      require('assert');
-let getProjNum =  require('../app/get_proj_num');
+let getProjNum =  require('../src/get_proj_num');
 
 let filenameStr = 'PROJ 00123456_UU2828+IPs.xlsx';
 let badFilenameStr = 'NO_PROJ321JJjfj_+.xls';

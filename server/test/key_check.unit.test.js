@@ -1,6 +1,6 @@
 let assert = require('assert');
 
-let keys = require('../app/key_check');
+let keys = require('../src/key_check');
 
 let config = {
   expectedColumns: [

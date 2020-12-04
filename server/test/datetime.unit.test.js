@@ -1,5 +1,5 @@
 let assert =    require('assert').strict;
-let datetime =  require('../app/datetime');
+let datetime =  require('../src/datetime');
 
 let datetimeFormat = new RegExp(/\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}/);
 let date = new Date();

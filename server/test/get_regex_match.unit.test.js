@@ -1,6 +1,6 @@
 let assert = require('assert');
 
-let getRegexMatchInArr = require('../app/get_regex_match');
+let getRegexMatchInArr = require('../src/get_regex_match');
 
 let config = {
   expectedColumns: [

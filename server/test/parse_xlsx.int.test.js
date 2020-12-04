@@ -1,8 +1,8 @@
 let assert =  require('assert');
 let ip =      require('ip');
 
-let parseXlsx = require('../app/parse_xlsx');
-let keys = require('../app/key_check');
+let parseXlsx = require('../src/parse_xlsx');
+let keys = require('../src/key_check');
 
 let truthReducer = (acc, curr) => acc && curr;
 let testDir = './test/files';

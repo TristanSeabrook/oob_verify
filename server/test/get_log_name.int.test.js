@@ -1,6 +1,6 @@
 let assert =      require('assert');
-let getLogName =  require('../app/get_log_name');
-let getDateTime = require('../app/datetime');
+let getLogName =  require('../src/get_log_name');
+let getDateTime = require('../src/datetime');
 
 let testConfigWithProjNum = {
   projNum: '123456',

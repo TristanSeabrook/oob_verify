@@ -1,6 +1,6 @@
 //import requried app modules
-let getRegexMatchInArr =  require('../app/get_regex_match');
-let keys =                require('../app/key_check');
+let getRegexMatchInArr =  require('./get_regex_match');
+let keys =                require('./key_check');
 
 //given a spreadsheet's contents, return an object with standardized keys
 module.exports = (config, xlsxContentsObjsArr) => {

@@ -1,5 +1,5 @@
 let assert =    require('assert');
-let getXlxsContents = require('../app/get_xlsx_contents');
+let getXlxsContents = require('../src/get_xlsx_contents');
 
 let testDir = './test/files';
 let testFilename = '456789.xls';

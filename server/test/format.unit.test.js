@@ -1,5 +1,5 @@
 let assert =  require('assert');
-let format =  require('../app/format');
+let format =  require('../src/format');
 
 let liveHost = {
   host: '192.168.1.101',

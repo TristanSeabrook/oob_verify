@@ -2,8 +2,8 @@
 let fs =              require('graceful-fs');
 
 //import module dependencies
-let getProjNum =      require('../app/get_proj_num');
-let pingHostsInFile = require('../app/ping_hosts_in_file');
+let getProjNum =      require('./get_proj_num');
+let pingHostsInFile = require('./ping_hosts_in_file');
 
 module.exports = (config) => {
   const directory = config.modeParams;

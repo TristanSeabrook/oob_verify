@@ -1,5 +1,5 @@
 let assert =  require('assert');
-let parseIPRange =  require('../app/parse_ip_range');
+let parseIPRange =  require('../src/parse_ip_range');
 
 let testRange = '100.100.129.202-100.100.129.232';
   let testRangeFirst =  testRange.split('-')[0];
