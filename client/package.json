@@ -4,7 +4,9 @@
   "description": "Front end for out-of-band verificatoin fool.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*test.js"
+    "dev": "webpack serve --config webpack.config.js --mode development --content-base src --inline --hot",
+    "test": "mocha test/*test.js",
+    "prod": "webpack -p"
   },
   "keywords": [
     "\"oob\"",
@@ -24,6 +26,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
+    "mocha": "^8.2.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.9.0",
     "webpack-cli": "^4.2.0",
