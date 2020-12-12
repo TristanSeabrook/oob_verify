@@ -1,6 +1,6 @@
 let fs = require('graceful-fs');
 
-let getLogLocation = require('./get_log_location');
+let getLogLocation = require('./get_log_properties').location;
 
 module.exports = (logContent, config) => {
   let logLocation = getLogLocation(config);

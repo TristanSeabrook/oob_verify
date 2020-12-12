@@ -3,8 +3,8 @@ let ping =            require('ping');
 let stringify =       require('json-stringify-pretty-compact');
 //import requried app modules
 let datetime =        require('./datetime');
-let getLogLocation =  require('./get_log_location');
-let getLogName =      require('./get_log_name');
+let getLogLocation =  require('./get_log_properties').location;
+let getLogName =      require('./get_log_properties').name;
 let writeLog =        require('./write_log');
 
 module.exports = async (config) => {

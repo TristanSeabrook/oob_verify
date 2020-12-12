@@ -1,10 +1,11 @@
 let assert =      require('assert');
-let getLogName =  require('../src/get_log_name');
+let getLogName =  require('../src/get_log_properties').name;
 let getDateTime = require('../src/datetime');
 
 let testConfigWithProjNum = {
   projNum: '123456',
   log: {
+    path: './logs',
     ext:'log'
   },
   regex: {
@@ -17,6 +18,7 @@ let testConfigWithoutProjNum = {
   projNum: false,
   altProjStr: 'PROJECT',
   log: {
+    path: './logs',
     ext:'log'
   },
   regex: {

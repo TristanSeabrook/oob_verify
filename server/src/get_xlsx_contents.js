@@ -10,6 +10,6 @@ module.exports = (filePath) => {
     return XLSX.utils.sheet_to_json(firstWorksheet);
   }
   catch(error) {
-    console.log(`Error: ${error}`);
+    return `Error getting XLSX contents: "${error}"`;
   }
 };

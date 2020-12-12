@@ -1,5 +1,5 @@
 let assert =        require('assert');
-let getLogLocation = require('../src/get_log_location');
+let getLogLocation = require('../src/get_log_properties').location;
 
 let testConfig = {
   log: {

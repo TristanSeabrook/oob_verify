@@ -1,7 +1,7 @@
 module.exports = (config) => {
-  let getXlsxContents = require('../app/get_xlsx_contents');
-  let parseXlsx =       require('../app/parse_xlsx');
-  let ping =            require('../app/ping');
+  let getXlsxContents = require('./get_xlsx_contents');
+  let parseXlsx =       require('./parse_xlsx');
+  let ping =            require('./ping');
 
   let filePath = config.modeParams;
   let xlsxContents = getXlsxContents(filePath);
